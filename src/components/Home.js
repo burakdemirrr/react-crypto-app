@@ -5,6 +5,10 @@ function Home() {
 
   const {data,err,loading} =useAxios();
 
+  if(err){
+    return alert(err);
+  }
+
 
   return (
     <div className='home'>
