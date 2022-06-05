@@ -11,7 +11,7 @@ function Home() {
       {
         loading ? <div>Loading...</div> :
         data && data.slice(0,25).map((item)=>(
-          <div className="coin-container">
+          <div className="coin-container" key={item.id}>
             <div className="coin-row">
               <div className="coin">
                 <img src={item.image} alt="" />
