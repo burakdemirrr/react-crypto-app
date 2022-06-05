@@ -5,7 +5,7 @@ function useAxios() {
 
     const base_url="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd";
 
-    const [data, setData] = useState(null);
+    const [data, setData] = useState([]);
     const [err, setErr] = React.useState("");
     const [loading, setLoading] = React.useState(true);
 

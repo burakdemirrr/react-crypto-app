@@ -34,6 +34,7 @@ body{
 .coin-symbol{
     text-transform: uppercase;
     margin-left:14px;
+    color:rgb(199, 195, 195);
 }
 .coin-data{
     display: flex;

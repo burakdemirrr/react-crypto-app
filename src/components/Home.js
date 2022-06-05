@@ -1,20 +1,39 @@
-import React from 'react'
+import React, { useState } from 'react'
 import useAxios from '../hooks/useAxios'
 import "./Home.css"
 function Home() {
 
   const {data,err,loading} =useAxios();
+  console.log(data);
+
+  const [form,setForm]=useState({
+    name:"",
+  })
+
+  const handleInputs=(e)=>{
+    setForm({
+      ...form,
+      [e.target.name]:e.target.value
+    })
+    console.log(form.name)
+  }
+
 
   if(err){
     return alert(err);
   }
 
-
+  const filteredcoins=data.filter(coin=>
+    coin.name.toLowerCase().includes(form.name.toLowerCase()))
+ 
   return (
     <div className='home'>
-      {
-        loading ? <div>Loading...</div> :
-        data && data.slice(0,25).map((item)=>(
+      <h1>Crypto App</h1>
+      <form >
+        <input type="text" placeholder='Search Coin' name="name" value={form.name} onChange={(e)=>handleInputs(e)} />
+      </form>
+      {loading ? <h1>Loading...</h1> :
+        filteredcoins.map((item)=>(
           <div className="coin-container" key={item.id}>
             <div className="coin-row">
               <div className="coin">
