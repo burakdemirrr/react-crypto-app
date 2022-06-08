@@ -26,7 +26,9 @@ function Home() {
   const filteredcoins=data.filter(coin=>
     coin.name.toLowerCase().includes(form.name.toLowerCase()))
     
-  return (
+  
+
+    return (
     <div className='home'>
       <h1>Crypto App</h1>
       <form >
