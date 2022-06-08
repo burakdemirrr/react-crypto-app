@@ -89,3 +89,17 @@ body{
 .green{
     color:green;
 }
+input{
+    background-color: transparent;
+    bordeR:0.5px solid rgb(255, 252, 252);
+    outline:0;
+    margin:20px 0;
+    padding:10px;
+    border-radius: 12px;
+    width:400px;
+    color:white;
+}
+input::placeholder{
+    color:rgb(203, 199, 199);
+
+    }
